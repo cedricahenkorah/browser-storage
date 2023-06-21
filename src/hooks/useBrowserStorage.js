@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const useBrowserStorage = () => {
   // initialize our states
-  const [localStorageValues, setLocalStorageValues] = useState({});
+  const [sessionStorageValues, setSessionStorageValues] = useState({});
 
   // create storage objects
   const createStorage = (state, setState) => ({
@@ -34,7 +34,10 @@ export const useBrowserStorage = () => {
     },
   });
 
-  const localStorage = createStorage(localStorageValues, setLocalStorageValues);
+  const sessionStorage = createStorage(
+    sessionStorageValues,
+    setSessionStorageValues
+  );
 
-  return { localStorage };
+  return { sessionStorage };
 };
