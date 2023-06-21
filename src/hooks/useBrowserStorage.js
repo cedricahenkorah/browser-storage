@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const useBrowserStorage = () => {
   // initialize our states
-  const [sessionStorageValues, setSessionStorageValues] = useState({});
+  const [cookiesValues, setCookiesValues] = useState({});
 
   // create storage objects
   const createStorage = (state, setState) => ({
@@ -34,10 +34,7 @@ export const useBrowserStorage = () => {
     },
   });
 
-  const sessionStorage = createStorage(
-    sessionStorageValues,
-    setSessionStorageValues
-  );
+  const cookies = createStorage(cookiesValues, setCookiesValues);
 
-  return { sessionStorage };
+  return { cookies };
 };
